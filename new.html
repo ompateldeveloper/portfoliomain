@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Draggable Scroll with Divs</title>
+<style>
+  #container {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    position: relative;
+  }
+  #content {
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    cursor: grab;
+  }
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    margin: 10px;
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+<div id="container">
+  <div id="content">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <!-- Add more boxes as needed -->
+  </div>
+</div>
+<script>
+  const content = document.getElementById("content");
+  let isDragging = false;
+  let startPosition = { x: 0, y: 0 };
+
+  content.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    startPosition = {
+      x: e.clientX - content.offsetLeft,
+      y: e.clientY - content.offsetTop,
+    };
+    content.style.cursor = "grabbing";
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+
+    const newX = e.clientX - startPosition.x;
+    const newY = e.clientY - startPosition.y;
+
+    content.style.left = `${newX}px`;
+    content.style.top = `${newY}px`;
+  });
+
+  document.addEventListener("mouseup", () => {
+    isDragging = false;
+    content.style.cursor = "grab";
+  });
+</script>
+</body>
+</html>
