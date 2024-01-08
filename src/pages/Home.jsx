@@ -102,8 +102,8 @@ const Home = ({isLoading}) => {
             </div>
             <div className="footer">
                 <div className="hl"></div>
-                <a className="my-resume" download href="./OmPatel_resume_300723.pdf">My Resume</a>
-                <a className="hire-me" href="">Hire Me</a>
+                <a className="my-resume" download href="./resume.pdf">My Resume</a>
+                <a className="hire-me" href="mailto:ompatel.developer@gmail.com">Hire Me</a>
             </div>
 
         </StyledHome>
