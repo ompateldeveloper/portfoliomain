@@ -102,7 +102,7 @@ const Home = ({isLoading}) => {
             </div>
             <div className="footer">
                 <div className="hl"></div>
-                <a className="my-resume" download href="./resume.pdf">My Resume</a>
+                <a className="my-resume"  download={'OmPatel_resume'} href="./resume.pdf">My Resume</a>
                 <a className="hire-me" href="mailto:ompatel.developer@gmail.com">Hire Me</a>
             </div>
 
