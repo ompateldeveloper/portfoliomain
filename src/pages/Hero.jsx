@@ -74,12 +74,21 @@ const Hero = () => {
                     {/* <span>Skills</span> */}
                 </div>
                 <div className="hero-el hero-el-4 ">
-                    <span>
-                        <img src="./projects_shadow.svg" alt="" id="projects-shadow" />
-                        <img src="./projects.svg" alt="" id="projects" />
-                    </span>
                 </div>
-                <div className="hero-el hero-el-5"></div>
+                <div className="hero-el hero-el-5">
+                    <p class="marquee">
+                        <div className="scrolling-container">
+                            <h3>React</h3>
+                            <h3>React</h3>
+                            <h3>React</h3>
+                            <h3>React</h3>
+                            <h3>React</h3>
+                            <h3>React</h3>
+                            <h3>React</h3>
+                            <h3>React</h3>
+                        </div>
+                    </p>
+                </div>
                 <div className="hero-el hero-el-6"></div>
             </div>
         </StyledHero>
@@ -128,25 +137,11 @@ const StyledHero = styled.div`
     clip-path:polygon(10.2% 12.5%, 35.9% 4.6%,35.9% 13.1%, 10.2% 21%);
     background: #9f872e;
     background: #e1e1e1;
-    /* background-image: radial-gradient(#000 .1px, transparent .1px);
-    background-size: 3px 3px; */
 }
 
 .hero-el-2{
     background: #0759a5;
     background: #1E1E1E;
-    /* background: #000; */
-
-    clip-path:polygon(
-        10.2% 22.2%,
-        83.2% 0,
-        83.2% 8.7%,
-        66.8% 13.6%,
-        66.8% 17.2%,
-        47.9% 23.0%,
-        47.9% 27.7%,
-        20.6% 35.6%,
-        10.2% 30.6%);
     clip-path:polygon(
         10.2% 22.2%,
         83.2% 0,
@@ -161,7 +156,6 @@ const StyledHero = styled.div`
 .hero-el-3{
     background: #122141;
     background: #1E1E1E;
-    /* background: #000; */
     clip-path:polygon(
         0 43.8%,
         88.1% 17.1%,
@@ -176,7 +170,6 @@ const StyledHero = styled.div`
         7.9% 52.7%,
         24.6% 47.1%,
         24.2% 46.7%,
- 
         0% 54.8%
     ); 
 }
@@ -212,17 +205,12 @@ const StyledHero = styled.div`
 }
 .hero-el-4:hover span #projects{
     opacity: 1;
-
 }
 
 .hero-el-4{
     background: #040607;
     background: #1E1E1E;
     background: #c3c3c3;
-    /* background: #000; */
-    /* filter: invert(75%); */
-    /* background-image: radial-gradient(#000 .1px, transparent .1px);
-    background-size: 3px 3px; */
     clip-path:polygon(
         10.2% 67.5%,
         82.9% 45.4%,
@@ -238,28 +226,46 @@ const StyledHero = styled.div`
         23.7% 72.4%,
         35.6% 68.6%,
         35.6% 68.0%,
- 
         10.2% 76.0%
     );
-    /* clip-path: polygon(0 0, 0 100% , 100% 100%, 100% 0); */
+    overflow: hidden;
 }
 .hero-el-5{
     background: #0759a5;
     background: #1E1E1E;
+    overflow: hidden;
     clip-path:polygon(
         10.2% 90.1%,
         83.2% 68.0%,
         83.2% 76.6%,
-
- 
         10.2% 98.7%
     );
 }
+/* .marquee {
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+}
+
+.marquee .scrolling-container {
+    display: inline-block;
+    display: flex;
+    gap:30px;
+    padding-left: 100%;
+    animation: marquee 5s linear infinite;
+}
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+} */
 .hero-el-6{
     background: #9f872e;
     background: #e1e1e1;
-    /* background-image: radial-gradient(#000 .1px, transparent .1px);
-    background-size: 3px 3px; */
     clip-path:polygon(
         39.3% 91.2%,
         83.2% 78.1%,

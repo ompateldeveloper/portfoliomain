@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { styled } from "styled-components";
 
 import Hero from "./Hero.jsx";
@@ -91,13 +91,16 @@ const Home = ({isLoading}) => {
                 Full-stack Web developer 
             </div>
             <div className="skills">
+                <div className="skill-el">Next Js</div>
                 <div className="skill-el">React Js</div>
                 <div className="skill-el">Django</div>
                 <div className="skill-el">Node JS</div>
                 <div className="skill-el">Three JS</div>
             </div>
             <div className="flex" ref={heroRef}>
-                <Hero />
+                <Suspense fallback={null}>
+                    <Hero />
+                </Suspense>
 
             </div>
             <div className="footer">

@@ -149,8 +149,19 @@ export default class SceneInit {
     			introAction.clampWhenFinished = true;
 
 				this.glbModel.traverse((child) => {
-					if (child.isMesh) {
-					  child.material = new THREE.MeshPhysicalMaterial({ color: 0x000000,});	
+					
+					if (child) {
+					  child.material = new THREE.MeshPhysicalMaterial({ 
+						color: new THREE.Color(0, 0, 0),
+						// clearcoat: 0.8,
+						// ior: 1.15,
+						// specularIntensity: 0.6,
+						roughness: 0.1,
+						// thickness: 1.5,
+						// transmission: 1.0,
+						// transparent:true,
+						// opacity:0.3
+					});	
 					}
 				});
 				this.scene.add(this.glbModel);
@@ -203,9 +214,9 @@ export default class SceneInit {
 
 			const screen4 = new THREE.Mesh(
 				new THREE.PlaneGeometry(10,6,10,5),
-				new THREE.MeshBasicMaterial({
+				new THREE.MeshPhysicalMaterial({
 					color:0xffffff,
-					map: new THREE.TextureLoader().load('./texture3.svg'),
+					map: new THREE.TextureLoader().load('./texture3.svg'),	
 					transparent:true,
 					opacity:1
 				})
@@ -220,14 +231,14 @@ export default class SceneInit {
 
 			const keyboard = new THREE.Mesh(
 				new THREE.BoxGeometry(9,3,0.1,10,3,1),
-				new THREE.MeshBasicMaterial({
+				new THREE.MeshPhysicalMaterial({
 					color:0xffffff,
-					map: new THREE.TextureLoader().load('./keyboard.png'),
-					
-					transparent:true,
-					// opacity:1
+					// map: new THREE.TextureLoader().load('./keyboard.png'),
+					roughness:1,
+					clearcoatRoughnessMap:new THREE.TextureLoader().load('./keyboardRoughnessMap.png'),
 				})
 			)
+			this.scene.add(new THREE.PointLight(0xffffff).add(keyboard))
 			this.scene.add(keyboard)
 			keyboard.rotateX(-Math.PI/3)
 			keyboard.position.set(0,2,-10) 
