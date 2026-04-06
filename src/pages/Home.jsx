@@ -91,11 +91,12 @@ const Home = ({isLoading}) => {
                 Full-stack Web developer 
             </div>
             <div className="skills">
-                <div className="skill-el">Next Js</div>
-                <div className="skill-el">React Js</div>
-                <div className="skill-el">Django</div>
-                <div className="skill-el">Node JS</div>
-                <div className="skill-el">Three JS</div>
+                <div className="skill-el">TypeScript</div>
+                <div className="skill-el">React & React Native</div>
+                <div className="skill-el">Next.js</div>
+                <div className="skill-el">Express</div>
+                <div className="skill-el">Node/Bun</div>
+                <div className="skill-el">Three.js</div>
             </div>
             <div className="flex" ref={heroRef}>
                 <Suspense fallback={null}>
@@ -105,7 +106,8 @@ const Home = ({isLoading}) => {
             </div>
             <div className="footer">
                 <div className="hl"></div>
-                <a className="my-resume"  download={'OmPatel_resume'} href="./resume.pdf">My Resume</a>
+                <a className="my-resume" href="https://github.com/ompateldeveloper">To my Github</a>
+                <a className="my-resume"  download={'OmPatel_resume'} href="./resume.pdf">Take my resume</a>
                 <a className="hire-me" href="mailto:ompatel.developer@gmail.com">Hire Me</a>
             </div>
 
